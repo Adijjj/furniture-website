@@ -6,7 +6,7 @@
 
     <!-- 首页 -->
     <url>
-        <loc>https://www.baoanfurniture.com/</loc>
+         <loc>https://Adijjj.github.io/furniture-website/</loc>
         <lastmod>2024-01-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
@@ -22,7 +22,7 @@
 
     <!-- 关于我们 -->
     <url>
-        <loc>https://www.baoanfurniture.com/#about</loc>
+         <loc>https://Adijjj.github.io/furniture-website/</loc>
         <lastmod>2024-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
@@ -30,12 +30,13 @@
 
     <!-- 联系我们 -->
     <url>
-        <loc>https://www.baoanfurniture.com/#contact</loc>
+         <loc>https://Adijjj.github.io/furniture-website/</loc>
         <lastmod>2024-01-01</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
 
 </urlset>
+
 
 
