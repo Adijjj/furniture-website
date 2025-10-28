@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 基础SEO -->
+    <title>上海市宝安家具 - 专业家具制造商 | 沙发 餐桌 床具 柜子定制</title>
+    <meta name="description" content="上海市宝安家具专业制造高品质沙发、餐桌、床具、柜子等家具产品。20多年生产经验，提供免费测量、专业设计、送货安装一站式服务。优惠折扣，品质保证！">
+    <meta name="keywords" content="上海市宝安家具,家具定制,沙发,餐桌,床,椅子,柜子,上海家具,实木家具,现代家具,北欧家具">
+    <meta name="author" content="上海市宝安家具">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="zh-CN">
+    
+    <!-- Open Graph标签（社交媒体分享） -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="上海市宝安家具 - 专业家具制造商">
+    <meta property="og:description" content="专业制造高品质家具，20多年生产经验，提供一站式服务">
+    <meta property="og:url" content="https://www.baoanfurniture.com">
+    <meta property="og:image" content="https://www.baoanfurniture.com/images/logo.jpg">
+    <meta property="og:site_name" content="上海市宝安家具">
+    <meta property="og:locale" content="zh_CN">
+    
+    <!-- Twitter Card标签 -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="上海市宝安家具 - 专业家具制造商">
+    <meta name="twitter:description" content="专业制造高品质家具，20多年生产经验">
+    <meta name="twitter:image" content="https://www.baoanfurniture.com/images/logo.jpg">
+    
+    <!-- 网站图标 -->
+    <link rel="icon" type="image/png" href="favicon.ico">
+    
+    <!-- 结构化数据（JSON-LD） -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FurnitureStore",
+        "name": "上海市宝安家具",
+        "description": "专业制造高品质家具的家具公司",
+        "url": "https://www.baoanfurniture.com",
+        "telephone": "021-8888-8888",
+        "email": "info@baoanfurniture.com",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "家具街88号",
+            "addressLocality": "宝安区",
+            "addressRegion": "上海市",
+            "addressCountry": "CN"
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+                "opens": "09:00",
+                "closes": "18:00"
+            }
+        ],
+        "priceRange": "¥299 - ¥10999"
+    }
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>上海市宝安家具</h1>
+                    <p>专业定制 • 匠心品质</p>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#products">产品中心</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                    <li><a href="#contact">联系我们</a></li>
+                </ul>
+                <div class="cart-icon" onclick="toggleCart()">
+                    <span>🛒</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 轮播横幅 -->
+    <section id="home" class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active">
+                <div class="hero-content">
+                    <h2>专业家具定制</h2>
+                    <p>为您打造舒适温馨的家</p>
+                    <button class="btn btn-primary" onclick="document.getElementById('products').scrollIntoView()">查看产品</button>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2>品质保证</h2>
+                    <p>精选优质材料，匠心工艺</p>
+                    <button class="btn btn-primary" onclick="document.getElementById('products').scrollIntoView()">立即购买</button>
+                </div>
+            </div>
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <h2>一站式服务</h2>
+                    <p>从设计到安装，全程贴心服务</p>
+                    <button class="btn btn-primary" onclick="document.getElementById('products').scrollIntoView()">了解更多</button>
+                </div>
+            </div>
+        </div>
+        <div class="hero-indicators">
+            <span class="indicator active" onclick="currentSlide(1)"></span>
+            <span class="indicator" onclick="currentSlide(2)"></span>
+            <span class="indicator" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+
+    <!-- 产品搜索 -->
+    <section id="products" class="products-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>产品中心</h2>
+                <p>精选家具，品质保证</p>
+            </div>
+            
+            <!-- 搜索栏 -->
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="搜索家具...（按名称、类别）" class="search-input">
+                <button class="search-btn" onclick="searchProducts()">搜索</button>
+            </div>
+
+            <!-- 分类筛选 -->
+            <div class="category-filter">
+                <button class="filter-btn active" onclick="filterProducts('all')">全部</button>
+                <button class="filter-btn" onclick="filterProducts('沙发')">沙发</button>
+                <button class="filter-btn" onclick="filterProducts('餐桌')">餐桌</button>
+                <button class="filter-btn" onclick="filterProducts('床')">床具</button>
+                <button class="filter-btn" onclick="filterProducts('椅子')">椅子</button>
+                <button class="filter-btn" onclick="filterProducts('柜子')">柜子</button>
+            </div>
+
+            <!-- 产品网格 -->
+            <div class="products-grid" id="productsGrid">
+                <!-- 产品将通过 JavaScript 动态加载 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>关于我们</h2>
+                <p>上海市宝安家具成立于1995年，专注于高品质家具制造</p>
+            </div>
+            <div class="about-content">
+                <div class="about-item">
+                    <h3>🎯 我们的使命</h3>
+                    <p>为客户提供高品质、环保、时尚的家具产品，让每个家庭都能拥有舒适美观的居住环境。</p>
+                </div>
+                <div class="about-item">
+                    <h3>⭐ 我们的优势</h3>
+                    <p>精选优质原材料，采用先进生产工艺，严格质量把控，确保每件产品都达到行业领先水平。</p>
+                </div>
+                <div class="about-item">
+                    <h3>🚚 服务承诺</h3>
+                    <p>提供免费上门测量、专业设计、送货安装一站式服务，让您省心省力。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>联系我们</h2>
+                <p>随时欢迎您的咨询</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <h3>📍 地址</h3>
+                        <p>上海市宝安区家具街88号</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📞 电话</h3>
+                        <p>021-8888-8888</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>📧 邮箱</h3>
+                        <p>info@baoanfurniture.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <h3>🕒 营业时间</h3>
+                        <p>周一至周日 9:00 - 18:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 底部 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 上海市宝安家具. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <!-- 图片放大模态框 -->
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modalImage">
+        <div class="modal-caption"></div>
+    </div>
+
+    <!-- 购物车侧边栏 -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h2>购物车</h2>
+            <span class="close-cart" onclick="toggleCart()">&times;</span>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">购物车为空</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <strong>总计：<span id="cartTotal">¥0</span></strong>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="checkout()">结算</button>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+

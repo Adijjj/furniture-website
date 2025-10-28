@@ -1,0 +1,23 @@
+# robots.txt for 上海市宝安家具网站
+
+User-agent: *
+Allow: /
+
+# 允许所有搜索引擎抓取
+User-agent: Googlebot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: 360Spider
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+# 网站地图位置
+Sitemap: https://www.baoanfurniture.com/sitemap.xml
+
+# 注意：请将上述URL替换为您的实际域名
+

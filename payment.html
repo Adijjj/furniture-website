@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>支付 - 上海市宝安家具</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="logo">
+                    <h1>上海市宝安家具</h1>
+                    <p>专业定制 • 匠心品质</p>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html">返回首页</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 支付页面 -->
+    <div class="payment-container">
+        <div class="payment-wrapper">
+            <div class="payment-header">
+                <h2>订单结算</h2>
+                <div class="order-info">
+                    <p>订单号：<span id="orderNumber"></span></p>
+                    <p>订单金额：<span class="total-amount" id="orderTotal"></span></p>
+                    <p class="order-note">请选择支付方式扫码支付</p>
+                </div>
+            </div>
+
+            <!-- 支付方式选择 -->
+            <div class="payment-methods">
+                <button class="payment-tab active" data-method="alipay" onclick="selectPaymentMethod('alipay')">
+                    <span class="payment-icon">💳</span>
+                    <span>支付宝</span>
+                </button>
+                <button class="payment-tab" data-method="wechat" onclick="selectPaymentMethod('wechat')">
+                    <span class="payment-icon">💚</span>
+                    <span>微信支付</span>
+                </button>
+            </div>
+
+            <!-- 支付宝支付 -->
+            <div id="alipayPayment" class="payment-content active">
+                <div class="qr-code-container">
+                    <div class="qr-code-placeholder">
+                        <div id="alipayQRWrapper">
+                            <img id="alipayQR" src="images/alipay-qr.png" alt="支付宝收款码" 
+                                 style="max-width: 300px; width: 100%; display: none;" 
+                                 onerror="this.style.display='none'; document.getElementById('alipayQRPlaceholder').style.display='block';">
+                        </div>
+                        <div id="alipayQRPlaceholder" style="text-align: center;">
+                            <div class="qr-code-icon">📱</div>
+                            <p class="qr-code-label">支付宝收款码</p>
+                            <p class="qr-code-hint">请使用支付宝扫描上方二维码</p>
+                            <p class="qr-code-note">💡 请上传收款码图片：images/alipay-qr.png</p>
+                            <div class="upload-placeholder">
+                                <p>请在上传收款码到 images/alipay-qr.png</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-amount">
+                    <span class="amount-label">支付金额</span>
+                    <span class="amount-value" id="alipayAmount">¥0</span>
+                </div>
+            </div>
+
+            <!-- 微信支付 -->
+            <div id="wechatPayment" class="payment-content">
+                <div class="qr-code-container">
+                    <div class="qr-code-placeholder">
+                        <div id="wechatQRWrapper">
+                            <img id="wechatQR" src="images/wechat-qr.png" alt="微信收款码" 
+                                 style="max-width: 300px; width: 100%; display: none;" 
+                                 onerror="this.style.display='none'; document.getElementById('wechatQRPlaceholder').style.display='block';"
+                                 onload="this.style.display='block'; document.getElementById('wechatQRPlaceholder').style.display='none';">
+                        </div>
+                        <div id="wechatQRPlaceholder" style="text-align: center;">
+                            <div class="qr-code-icon">💚</div>
+                            <p class="qr-code-label">微信收款码</p>
+                            <p class="qr-code-hint">请使用微信扫描上方二维码</p>
+                            <p class="qr-code-note">💡 请上传收款码图片：images/wechat-qr.png</p>
+                            <div class="upload-placeholder">
+                                <p>请在上传收款码到 images/wechat-qr.png</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="payment-amount">
+                    <span class="amount-label">支付金额</span>
+                    <span class="amount-value" id="wechatAmount">¥0</span>
+                </div>
+            </div>
+
+            <!-- 订单详情 -->
+            <div class="order-details">
+                <h3>订单详情</h3>
+                <div id="orderItems"></div>
+                <div class="order-summary">
+                    <div class="summary-row">
+                        <span>小计：</span>
+                        <span id="subtotal">¥0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>运费：</span>
+                        <span>免运费</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>总计：</span>
+                        <span id="finalTotal">¥0</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 支付提示 -->
+            <div class="payment-tips">
+                <h3>支付说明</h3>
+                <ul>
+                    <li>📱 请使用对应的支付软件扫描二维码</li>
+                    <li>✅ 支付完成后，请点击下方"已完成支付"按钮</li>
+                    <li>📞 如有问题，请联系：021-8888-8888</li>
+                    <li>⏰ 订单将在24小时内处理</li>
+                </ul>
+            </div>
+
+            <!-- 操作按钮 -->
+            <div class="payment-actions">
+                <button class="btn btn-secondary" onclick="goBackToHome()">返回首页</button>
+                <button class="btn btn-primary" onclick="markAsPaid()">已完成支付</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 支付成功对话框 -->
+    <div id="paymentSuccessModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <div class="success-icon">✓</div>
+            <h2>支付成功！</h2>
+            <p>感谢您的购买！我们将尽快为您处理订单。</p>
+            <p class="order-id">订单号：<span id="successOrderNumber"></span></p>
+            <div class="success-actions">
+                <button class="btn btn-primary" onclick="goBackToHome()">返回首页</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="payment.js"></script>
+</body>
+</html>
+
