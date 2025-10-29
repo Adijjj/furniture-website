@@ -29,30 +29,30 @@ const products = [
     },
     {
         id: 4,
-        name: "简约现代餐桌椅套装",
-        category: "餐桌",
+        name: "简约现代办公桌1",
+        category: "办公桌",
         price: 2899,
         originalPrice: 3999,
         discount: "28折",
-        image: ""
+        image: ""D:\54d46adb38c85c862dba11255cee03ae.jpg""
     },
     {
         id: 5,
-        name: "实木圆形餐桌",
-        category: "餐桌",
+        name: "简约现代办公桌2",
+        category: "办公桌",
         price: 3499,
         originalPrice: 4999,
         discount: "30折",
-        image: ""
+        image: ""D:\ee2f929918d43377d2367a01404dddc5.jpg""
     },
     {
         id: 6,
-        name: "现代简约餐桌",
+        name: "简约现代办公桌3",
         category: "餐桌",
         price: 2199,
         originalPrice: 3499,
         discount: "37折",
-        image: ""
+        image: ""D:\dee619cf0de1ffc3a5ee971dbad93520.jpg""
     },
     {
         id: 7,
@@ -163,4 +163,5 @@ const products = [
         image: ""
     }
 ];
+
 
