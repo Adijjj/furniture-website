@@ -34,7 +34,7 @@ const products = [
         price: 2899,
         originalPrice: 3999,
         discount: "28折",
-        image: ""D:\54d46adb38c85c862dba11255cee03ae.jpg""
+        image: "D:\54d46adb38c85c862dba11255cee03ae.jpg"
     },
     {
         id: 5,
@@ -43,7 +43,7 @@ const products = [
         price: 3499,
         originalPrice: 4999,
         discount: "30折",
-        image: ""D:\ee2f929918d43377d2367a01404dddc5.jpg""
+        image: "D:\ee2f929918d43377d2367a01404dddc5.jpg"
     },
     {
         id: 6,
@@ -52,7 +52,7 @@ const products = [
         price: 2199,
         originalPrice: 3499,
         discount: "37折",
-        image: ""D:\dee619cf0de1ffc3a5ee971dbad93520.jpg""
+        image: "D:\dee619cf0de1ffc3a5ee971dbad93520.jpg"
     },
     {
         id: 7,
@@ -163,5 +163,6 @@ const products = [
         image: ""
     }
 ];
+
 
 
